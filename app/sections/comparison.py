@@ -144,7 +144,10 @@ def _WybthonCard(source: Any = None):
     return div(
         div(
             h(Eyebrow, {"text": "Wybthon · holes only"}),
-            span(" · only the changed islands flash", class_="muted"),
+            div(
+                span("Only the changed islands flash", class_="muted"),
+                class_="panel-header-copy",
+            ),
             class_="panel-header",
         ),
         div(
@@ -158,8 +161,7 @@ def _WybthonCard(source: Any = None):
         p(
             "The component body executed exactly once at mount. ",
             "The 5 reactive holes, 1 per row, are the only DOM nodes that update.",
-            class_="muted",
-            style={"marginTop": "1rem", "fontSize": "0.85rem"},
+            class_="muted panel-note",
         ),
         class_="panel cmp-card cmp-card--good",
     )
@@ -197,7 +199,10 @@ def _NaiveCard(source: Any = None):
     return div(
         div(
             h(Eyebrow, {"text": "Naive · innerHTML rewrite"}),
-            span(" · the whole card is replaced on every change", class_="muted"),
+            div(
+                span("The whole card is replaced on every change", class_="muted"),
+                class_="panel-header-copy",
+            ),
             class_="panel-header",
         ),
         div(ref=inner_ref, class_="cmp-grid"),
@@ -205,8 +210,7 @@ def _NaiveCard(source: Any = None):
             "Every update rewrites all ",
             span(str(NAIVE_NODE_COUNT), class_="pill bad"),
             " DOM nodes inside this card and the surrounding panel flashes red.",
-            class_="muted",
-            style={"marginTop": "1rem", "fontSize": "0.85rem"},
+            class_="muted panel-note",
         ),
         class_=lambda: f"panel cmp-card cmp-card--bad naive-card flash-{rev_signal() % 2}",
     )
@@ -271,20 +275,14 @@ def Comparison():
                         value=tick,
                         on_input=on_slider,
                     ),
-                    style={"flex": "1", "minWidth": "240px"},
+                    class_="comparison-slider",
                 ),
                 div(
                     button("Burst · 60 updates", on_click=burst, class_="btn btn-primary"),
                     button("Reset", on_click=reset, class_="btn"),
-                    style={"display": "inline-flex", "gap": "0.5rem"},
+                    class_="control-cluster",
                 ),
-                style={
-                    "display": "flex",
-                    "gap": "1rem",
-                    "alignItems": "flex-end",
-                    "flexWrap": "wrap",
-                    "marginBottom": "1.4rem",
-                },
+                class_="comparison-controls",
             ),
             div(
                 h(_WybthonCard, {"source": tick}),
@@ -303,7 +301,7 @@ def Comparison():
                 ),
                 h3(
                     "Why the right-hand side feels heavier",
-                    style={"gridColumn": "1 / -1", "marginTop": "0.4rem"},
+                    class_="grid-full comparison-summary-title",
                 ),
                 p(
                     "The naive card has no concept of which value changed; it ",
@@ -311,11 +309,9 @@ def Comparison():
                     "must re-parse the HTML, recompute layout, and repaint the whole ",
                     "panel. Wybthon, by contrast, patches a single text node per ",
                     "reactive hole; layout work outside that node is skipped entirely.",
-                    class_="muted",
-                    style={"gridColumn": "1 / -1", "fontSize": "0.92rem"},
+                    class_="muted grid-full section-note",
                 ),
-                class_="stat-grid",
-                style={"marginTop": "1.4rem"},
+                class_="stat-grid section-block",
             ),
             class_="container",
         ),

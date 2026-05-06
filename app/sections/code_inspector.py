@@ -91,15 +91,8 @@ def CodeInspector():
             ),
             div(
                 h(Legend, {"text": "Run once at mount", "tone": "good"}),
-                span("\u00a0\u00a0"),
                 h(Legend, {"text": "Reactive hole · own effect", "tone": "good"}),
-                style={
-                    "display": "inline-flex",
-                    "gap": "0.6rem",
-                    "alignItems": "center",
-                    "marginBottom": "1rem",
-                    "color": "var(--text-3)",
-                },
+                class_="legend-row",
             ),
             pre(
                 code(
@@ -162,8 +155,7 @@ def CodeInspector():
                         ),
                     },
                 ),
-                class_="figure-grid",
-                style={"marginTop": "1.4rem"},
+                class_="figure-grid section-block",
             ),
             class_="container",
         ),
@@ -176,7 +168,6 @@ def CodeInspector():
 def _Insight(title: str = "", body: str = ""):
     return div(
         span(title, class_="col-tag is-good"),
-        p(body, class_="muted", style={"fontSize": "0.92rem"}),
-        class_="panel",
-        style={"padding": "1.1rem 1.2rem"},
+        p(body, class_="muted section-note"),
+        class_="panel panel-compact",
     )

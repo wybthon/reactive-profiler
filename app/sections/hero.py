@@ -108,20 +108,24 @@ def _Playground():
     return div(
         div(
             h(Eyebrow, {"text": "Live playground"}),
-            span("\u00a0"),
-            span("Component bodies have run ", class_="muted"),
-            h(Pill, {"text": lambda: fmt_number(component_body_runs()), "tone": "good"}),
-            span(" · only reactive holes update from here on", class_="muted"),
+            div(
+                span("Component bodies have run", class_="muted"),
+                h(Pill, {"text": lambda: fmt_number(component_body_runs()), "tone": "good"}),
+                span("only reactive holes update from here on", class_="muted"),
+                class_="panel-header-copy",
+            ),
             class_="panel-header",
         ),
-        # --- counter row ---
         div(
-            h(FieldLabel, {"text": "Counter"}),
             div(
-                button("−", on_click=dec_count, class_="btn btn-icon", aria_label="Decrement"),
-                button("+", on_click=inc_count, class_="btn btn-icon", aria_label="Increment"),
-                button("Reset", on_click=reset_count, class_="btn btn-sm btn-ghost"),
-                style={"display": "inline-flex", "gap": "0.4rem", "alignItems": "center"},
+                h(FieldLabel, {"text": "Counter"}),
+                div(
+                    button("−", on_click=dec_count, class_="btn btn-icon", aria_label="Decrement"),
+                    button("+", on_click=inc_count, class_="btn btn-icon", aria_label="Increment"),
+                    button("Reset", on_click=reset_count, class_="btn btn-sm btn-ghost"),
+                    class_="control-cluster",
+                ),
+                class_="field-heading",
             ),
             div(
                 span("count = ", class_="muted"),
@@ -130,11 +134,10 @@ def _Playground():
                 h(Island, {"getter": double, "kind": "cool", "label": "derived: count * 2"}),
                 span(" · parity = ", class_="muted"),
                 h(Island, {"getter": parity, "kind": "warn", "label": "derived: even/odd"}),
-                style={"marginTop": "0.6rem", "fontSize": "0.95rem"},
+                class_="reactive-line",
             ),
-            style={"marginBottom": "1.4rem"},
+            class_="playground-field",
         ),
-        # --- slider row ---
         div(
             h(FieldLabel, {"text": "Slider", "html_for": "rp-slider"}),
             input_(
@@ -153,11 +156,10 @@ def _Playground():
                 h(Island, {"getter": slider_pct, "kind": "cool", "label": "value as percent"}),
                 span(" · bucket = ", class_="muted"),
                 h(Island, {"getter": slider_bucket, "kind": "warn", "label": "low / mid / high"}),
-                style={"marginTop": "0.4rem", "fontSize": "0.95rem"},
+                class_="reactive-line",
             ),
-            style={"marginBottom": "1.4rem"},
+            class_="playground-field",
         ),
-        # --- text input row ---
         div(
             h(FieldLabel, {"text": "Name", "html_for": "rp-name"}),
             input_(
@@ -168,14 +170,15 @@ def _Playground():
                 on_input=on_name_input,
                 spellcheck="false",
                 autocomplete="off",
-                style={"maxWidth": "320px"},
+                class_="name-input",
             ),
             div(
                 h(Island, {"getter": greeting, "kind": "primary", "label": "greeting"}),
                 span(" · letters = ", class_="muted"),
                 h(Island, {"getter": name_length, "kind": "cool", "label": "len(name)"}),
-                style={"marginTop": "0.55rem", "fontSize": "0.95rem"},
+                class_="reactive-line",
             ),
+            class_="playground-field",
         ),
         class_="panel",
         id="playground",
@@ -208,8 +211,10 @@ def _ProfilerPanel():
     return div(
         div(
             h(Eyebrow, {"text": "Profiler"}),
-            span("\u00a0"),
-            span("Live counters update through their own reactive holes.", class_="muted"),
+            div(
+                span("Live counters update through their own reactive holes.", class_="muted"),
+                class_="panel-header-copy",
+            ),
             class_="panel-header",
         ),
         div(
@@ -282,12 +287,7 @@ def _ProfilerPanel():
                 rel="noopener",
                 class_="btn btn-sm btn-ghost",
             ),
-            style={
-                "display": "flex",
-                "gap": "0.5rem",
-                "marginTop": "1rem",
-                "flexWrap": "wrap",
-            },
+            class_="panel-actions",
         ),
         class_="panel",
         id="profiler",
@@ -346,8 +346,8 @@ def Hero():
                 div(
                     span("Powered by "),
                     span("Wybthon 0.23", class_="pill good"),
-                    span("\u00a0\u00a0Pyodide 0.27", class_="pill"),
-                    span("\u00a0\u00a0Pure Python, no JavaScript build", class_="pill"),
+                    span("Pyodide 0.27", class_="pill"),
+                    span("Pure Python, no JavaScript build", class_="pill"),
                     class_="hero-meta",
                 ),
                 class_="hero-copy",
@@ -357,7 +357,7 @@ def Hero():
         ),
         div(
             h(_ProfilerPanel, {}),
-            style={"marginTop": "1.4rem"},
+            class_="section-block",
         ),
         class_="hero container",
     )

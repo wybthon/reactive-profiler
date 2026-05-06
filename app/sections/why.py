@@ -12,10 +12,9 @@ __all__ = ["WhyItMatters"]
 def _Highlight(title: str, body: str, kicker: str):
     return div(
         div(kicker, class_="col-tag is-good"),
-        h3(title, style={"marginTop": "0.2rem"}),
-        p(body, class_="muted", style={"fontSize": "0.92rem"}),
-        class_="panel",
-        style={"padding": "1.2rem 1.3rem"},
+        h3(title),
+        p(body, class_="muted section-note"),
+        class_="panel panel-compact highlight-card",
     )
 
 
