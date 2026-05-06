@@ -1,4 +1,4 @@
-"""``Island`` — a visual wrapper around a reactive hole.
+"""``Island``: a visual wrapper around a reactive hole.
 
 Wybthon already updates DOM nodes fine-grained when a signal changes; this
 component just makes that visible. Whenever the wrapped getter re-evaluates
@@ -7,7 +7,7 @@ counter so the on-page profiler can show you exactly how much (or how
 little) work the framework actually did.
 
 The flash is implemented with two animation-name aliases (``flash-a`` /
-``flash-b``) that we alternate between via the ``class`` reactive prop —
+``flash-b``) that we alternate between via the ``class`` reactive prop;
 the ``animation-name`` change is what restarts the keyframe.
 """
 
@@ -50,7 +50,7 @@ def Island(
             ``lambda`` reading several signals). Embedded as a hole, so
             Wybthon's reconciler patches just the inner text node when its
             dependencies change.
-        kind: Visual variant — one of ``"primary"`` (purple), ``"cool"``
+        kind: Visual variant; one of ``"primary"`` (purple), ``"cool"``
             (teal), or ``"warn"`` (amber). Maps to a CSS modifier class.
         label: Optional ``title`` attribute, useful as a tooltip when
             multiple islands appear in the same view.

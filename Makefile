@@ -1,4 +1,4 @@
-# Reactive Profiler — local development helpers.
+# Reactive Profiler: local development helpers.
 #
 # Targets:
 #   make           Show this help
@@ -12,7 +12,7 @@ PORT ?= 8000
 .PHONY: help manifest check serve dev clean
 
 help:
-	@echo "Reactive Profiler — make targets"
+	@echo "Reactive Profiler: make targets"
 	@echo "  make manifest   Regenerate app/manifest.json"
 	@echo "  make check      Fail if app/manifest.json is stale"
 	@echo "  make serve      python -m http.server $(PORT)"

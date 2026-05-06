@@ -5,8 +5,8 @@ Two cards bound to the same source signal:
 * The **Wybthon** card embeds reactive holes via :class:`Island`. When the
   source ticks, only the affected text nodes update and only the relevant
   islands flash.
-* The **Naive** card simulates the React-style "rebuild everything" path —
-  on every update its whole inner ``innerHTML`` is rewritten and the
+* The **Naive** card simulates the React-style "rebuild everything" path.
+  On every update its whole inner ``innerHTML`` is rewritten and the
   surrounding panel flashes red. We bump :data:`naive_dom_mutations` by
   the static node count so visitors can see the difference accumulate.
 
@@ -157,7 +157,7 @@ def _WybthonCard(source: Any = None):
         ),
         p(
             "The component body executed exactly once at mount. ",
-            "Five reactive holes — one per row — are the only DOM nodes that update.",
+            "The 5 reactive holes, 1 per row, are the only DOM nodes that update.",
             class_="muted",
             style={"marginTop": "1rem", "fontSize": "0.85rem"},
         ),
@@ -306,7 +306,7 @@ def Comparison():
                     style={"gridColumn": "1 / -1", "marginTop": "0.4rem"},
                 ),
                 p(
-                    "The naive card has no concept of which value changed — it ",
+                    "The naive card has no concept of which value changed; it ",
                     "rebuilds and re-attaches every node on each update. Browsers ",
                     "must re-parse the HTML, recompute layout, and repaint the whole ",
                     "panel. Wybthon, by contrast, patches a single text node per ",

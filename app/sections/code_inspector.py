@@ -3,8 +3,8 @@
 We render the Python source as a styled ``<pre>`` with two highlight
 classes:
 
-* ``.tok-once`` — bits that run **once** at mount.
-* ``.tok-hole`` — bits that become **reactive holes** at runtime.
+* ``.tok-once``: bits that run **once** at mount.
+* ``.tok-hole``: bits that become **reactive holes** at runtime.
 
 The intent is to make the framework's contract immediately legible:
 function bodies execute exactly once; the highlighted holes are the only
@@ -85,7 +85,7 @@ def CodeInspector():
                 span("purple", style={"color": "var(--accent-2)", "fontWeight": "600"}),
                 " is each ",
                 _hole("reactive hole"),
-                " — every signal accessor that the reconciler will wire up to its own ",
+                ": every signal accessor that the reconciler will wire up to its own ",
                 "fine-grained effect.",
                 class_="lede",
             ),
@@ -135,8 +135,8 @@ def CodeInspector():
                         "title": "Run once",
                         "body": (
                             "The function body of `Counter` executes a single time. "
-                            "After that, signal updates never re-invoke it — "
-                            "there are no virtual-DOM diffs above the leaves."
+                            "After that, signal updates never re-invoke it, so "
+                            "there aren't any virtual-DOM diffs above the leaves."
                         ),
                     },
                 ),

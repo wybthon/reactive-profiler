@@ -6,7 +6,7 @@ the comparison between fine-grained reactive holes and naive whole-component
 re-renders explicit.
 
 The counters are intentionally simple Python ints wrapped in Wybthon
-signals — exactly the kind of state the framework is designed to render
+signals, exactly the kind of state the framework is designed to render
 reactively. Updating them inside ``batch(...)`` keeps coalescing semantics
 intact when many writes occur in a tight loop.
 """
@@ -42,7 +42,7 @@ re-runs in response to one of its dependencies changing.
 wybthon_dom_mutations, _set_wybthon_dom_mutations = create_signal(0)
 """Estimated DOM mutations attributable to fine-grained Wybthon updates.
 
-We approximate this as one mutation per hole evaluation — Wybthon's
+We approximate this as one mutation per hole evaluation because Wybthon's
 reconciler patches a single text node (or attribute) per hole.
 """
 
@@ -50,7 +50,7 @@ naive_dom_mutations, _set_naive_dom_mutations = create_signal(0)
 """DOM mutations that a naive whole-component re-render would have done.
 
 Bumped by the comparison demo each time the "naive" path rewrites the
-container's ``innerHTML`` — every element inside is effectively replaced.
+container's ``innerHTML``; every element inside is effectively replaced.
 """
 
 # ---------------------------------------------------------------------------
@@ -124,7 +124,7 @@ def tracked_signal(initial: Any) -> Tuple[Callable[[], Any], Callable[[Any], Non
     """Return a ``(getter, setter)`` pair that also bumps :data:`signal_writes`.
 
     Use this everywhere the profiler should observe writes. The returned
-    getter is a regular Wybthon signal accessor — pass it directly into
+    getter is a regular Wybthon signal accessor; pass it directly into
     :class:`app.profiler.island.Island` to create a reactive hole.
     """
 

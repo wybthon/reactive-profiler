@@ -188,7 +188,7 @@ await main()
     console.log(`[reactive-profiler] Loaded ${files.length} Python files. Wybthon ${WYBTHON_SPEC} ready.`);
   } catch (err) {
     console.error("[reactive-profiler] Bootstrap failed:", err);
-    setStatus("Boot failed — see overlay for details.");
+    setStatus("Boot failed; see the overlay for details.");
     const msg = (err && (err.message || err.stack)) ? `${err.message || ""}\n${err.stack || ""}` : String(err);
     showErrorOverlay("Bootstrap Failure", msg);
   }

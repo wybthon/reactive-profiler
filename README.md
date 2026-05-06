@@ -35,7 +35,7 @@ reactive-profiler/
 ├── bootstrap.js          # Pyodide + micropip + manifest-driven loader
 ├── app/
 │   ├── manifest.json     # List of Python files to install into Pyodide FS
-│   ├── main.py           # async main() — bootstrap entry point
+│   ├── main.py           # async main(), bootstrap entry point
 │   ├── app.py            # Root <App> component
 │   ├── profiler/         # Counters + Island wrapper for visualising holes
 │   ├── ui/               # Tiny presentational primitives (Stat, Pill, …)
@@ -105,7 +105,7 @@ To wire up the custom domain `profiler.wybthon.com`:
     profiler  CNAME  <github-username>.github.io.
     ```
 
-   (For an apex domain you'd use the GitHub Pages `A` records instead — apex isn't needed here.)
+   (For an apex domain, you'd use the GitHub Pages `A` records instead; apex isn't needed here.)
 
 5. Once DNS propagates, enable **Enforce HTTPS** in the Pages settings.
 
@@ -114,7 +114,7 @@ To wire up the custom domain `profiler.wybthon.com`:
 - Pyodide is loaded from `cdn.jsdelivr.net` (`/pyodide/v0.27.5/full/`).
 - `micropip.install("wybthon==0.23.0")` pulls the pure-Python wheel from `files.pythonhosted.org`.
 - The bootstrap script reads `app/manifest.json`, fetches each file via plain `GET`, and writes it into Pyodide's virtual FS at `/app/...`. No service worker, no zip extraction.
-- Component bodies use the `@component` decorator. Reactive holes are zero-arg callables embedded in the VNode tree — see [`app/profiler/island.py`](app/profiler/island.py) for the canonical pattern.
+- Component bodies use the `@component` decorator. Reactive holes are zero-arg callables embedded in the VNode tree; see [`app/profiler/island.py`](app/profiler/island.py) for the canonical pattern.
 
 ## License
 

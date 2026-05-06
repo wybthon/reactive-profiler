@@ -1,3 +1,3 @@
-"""Reactive Profiler — interactive Wybthon demo."""
+"""Reactive Profiler, an interactive Wybthon demo."""
 
 __all__: list[str] = []

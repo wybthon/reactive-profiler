@@ -1,4 +1,4 @@
-"""Hero playground — the "wow factor" of the page.
+"""Hero playground, the "wow factor" of the page.
 
 The visitor lands here and immediately gets to:
 
@@ -218,7 +218,7 @@ def _ProfilerPanel():
                 {
                     "label": "Component bodies executed",
                     "value": body_text,
-                    "sub": "Locked — Wybthon runs each body once at mount.",
+                    "sub": "Locked; Wybthon runs each body once at mount.",
                     "locked": True,
                 },
             ),
@@ -254,7 +254,7 @@ def _ProfilerPanel():
                 {
                     "label": "DOM mutations · naive",
                     "value": naive_dom_text,
-                    "sub": "Whole-card innerHTML rewrites — see comparison.",
+                    "sub": "Whole-card innerHTML rewrites; see comparison.",
                     "tone": "hot",
                 },
             ),
@@ -315,8 +315,8 @@ def Hero():
                     "Wybthon is a Python SPA framework that runs in your browser. "
                     "Component bodies execute exactly once at mount; signals flow "
                     "through reactive holes that patch single DOM nodes. ",
-                    "Drive the controls below and watch the islands light up — only "
-                    "the bits that actually depend on your input.",
+                    "Drive the controls below and watch the islands light up; only "
+                    "the bits that depend on your input change.",
                     class_="lede",
                 ),
                 div(
@@ -347,7 +347,7 @@ def Hero():
                     span("Powered by "),
                     span("Wybthon 0.23", class_="pill good"),
                     span("\u00a0\u00a0Pyodide 0.27", class_="pill"),
-                    span("\u00a0\u00a0Pure Python — no JavaScript build", class_="pill"),
+                    span("\u00a0\u00a0Pure Python, no JavaScript build", class_="pill"),
                     class_="hero-meta",
                 ),
                 class_="hero-copy",

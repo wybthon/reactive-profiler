@@ -27,7 +27,7 @@ def WhyItMatters():
             h2("Predictable, fast, and Pythonic."),
             p(
                 "Wybthon's run-once / reactive-hole model gives you the ergonomics ",
-                "of React-style components and the update model of SolidJS — entirely ",
+                "of React-style components and the update model of SolidJS, all ",
                 "in Python. ",
                 a(
                     "Read the mental model in the docs",
@@ -43,7 +43,7 @@ def WhyItMatters():
                     title="No reconciler-thrash on every keystroke",
                     body=(
                         "Component bodies don't run again when state changes. "
-                        "There is no diffing tree to walk; only the holes that "
+                        "There's no diffing tree to walk; only the holes that "
                         "depend on the signal you wrote actually do work."
                     ),
                     kicker="Predictable",
@@ -61,8 +61,8 @@ def WhyItMatters():
                     title="Native-feeling Python",
                     body=(
                         "div(p(\"Count: \", span(count)), button(\"+\", on_click=…)) "
-                        "reads like Python. No JSX, no JavaScript build step, no "
-                        "transpiler — just functions and signals."
+                        "reads like Python. It's just functions and signals, with "
+                        "no JSX, JavaScript build step, or transpiler."
                     ),
                     kicker="Pythonic",
                 ),
@@ -70,7 +70,7 @@ def WhyItMatters():
                     title="Plays well with the platform",
                     body=(
                         "Standard browser APIs are right there via Pyodide: "
-                        "fetch, IndexedDB, WebGL, Web Audio, file inputs — all "
+                        "fetch, IndexedDB, WebGL, Web Audio, and file inputs are all "
                         "callable from Python with normal async/await."
                     ),
                     kicker="Open",

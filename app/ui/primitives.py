@@ -1,4 +1,4 @@
-"""Small visual primitives — eyebrows, pills, stat cards, legends.
+"""Small visual primitives: eyebrows, pills, stat cards, legends.
 
 Each of these is a tiny ``@component``. Static visual variants (``tone``,
 ``locked``, etc.) are read once via :func:`untrack`; reactive content
@@ -49,7 +49,7 @@ def Stat(
             Embedded as a hole, so passing a getter wires up reactivity.
         sub: Optional secondary line rendered below the value. Same rules
             as ``value``.
-        tone: Visual variant — ``"default" | "highlight" | "cool" | "hot" | "warn"``.
+        tone: Visual variant; ``"default" | "highlight" | "cool" | "hot" | "warn"``.
         locked: When True, the card is rendered in dashed-border "fixed" style
             (used for the "Component bodies executed" stat which is locked at 1).
     """

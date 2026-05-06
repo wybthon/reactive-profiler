@@ -8,7 +8,7 @@
 
   <title>Reactive Profiler · Wybthon</title>
   <meta name="description"
-        content="Watch run-once Python components update single DOM nodes through fine-grained reactive holes — live, in your browser, powered by Wybthon and Pyodide." />
+        content="Watch Wybthon and Pyodide power run-once Python components that update single DOM nodes through fine-grained reactive holes, live in your browser." />
 
   <link rel="canonical" href="https://profiler.wybthon.com/" />
 
@@ -23,24 +23,24 @@
   <meta property="og:url" content="https://profiler.wybthon.com/" />
   <meta property="og:title" content="Reactive Profiler · Wybthon" />
   <meta property="og:description"
-        content="See exactly which DOM nodes Wybthon updates. Run-once Python components with fine-grained reactive holes — live in your browser." />
+        content="See exactly which DOM nodes Wybthon updates. Watch run-once Python components use fine-grained reactive holes live in your browser." />
   <meta property="og:image" content="https://profiler.wybthon.com/assets/og-image.jpg" />
   <meta property="og:image:secure_url" content="https://profiler.wybthon.com/assets/og-image.jpg" />
   <meta property="og:image:type" content="image/jpeg" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta property="og:image:alt"
-        content="Wybthon — interactive Python web framework powered by Pyodide." />
+        content="Wybthon, an interactive Python web framework powered by Pyodide." />
   <meta property="og:locale" content="en_US" />
 
   <!-- Twitter / X -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Reactive Profiler · Wybthon" />
   <meta name="twitter:description"
-        content="Run-once Python components, fine-grained reactive holes, zero rerenders. See it update — node by node — in your browser." />
+        content="Run-once Python components, fine-grained reactive holes, and 0 rerenders. See it update node by node in your browser." />
   <meta name="twitter:image" content="https://profiler.wybthon.com/assets/og-image.jpg" />
   <meta name="twitter:image:alt"
-        content="Wybthon — interactive Python web framework powered by Pyodide." />
+        content="Wybthon, an interactive Python web framework powered by Pyodide." />
 
   <!-- JSON-LD -->
   <script type="application/ld+json">
@@ -572,7 +572,7 @@
     .stat.is-warn .stat-value { color: var(--warn); }
     .stat.locked    { border-style: dashed; }
 
-    /* Reactive island styling — flashes on update */
+    /* Reactive island styling: flashes on update */
     .island {
       position: relative;
       display: inline-block;
@@ -613,7 +613,7 @@
     .island--cool.flash-1 { animation-name: island-flash-a; }
     .island--warn   { background: rgba(248, 222, 78, 0.55); border-color: var(--accent-3); }
 
-    /* Naive (full rerender) container — flashes whole card */
+    /* Naive (full rerender) container: flashes whole card */
     @keyframes naive-flash-a {
       0%   { background-color: #ffd0dc; border-color: var(--error); box-shadow: 10px 10px 0 var(--error); }
       100% { background-color: #fffdf2; border-color: var(--border-1); box-shadow: var(--shadow-soft); }
