@@ -108,12 +108,6 @@ def _Playground():
     return div(
         div(
             h(Eyebrow, {"text": "Live playground"}),
-            div(
-                span("Component bodies have run", class_="muted"),
-                h(Pill, {"text": lambda: fmt_number(component_body_runs()), "tone": "good"}),
-                span("only reactive holes update from here on", class_="muted"),
-                class_="panel-header-copy",
-            ),
             class_="panel-header",
         ),
         div(

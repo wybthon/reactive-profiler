@@ -566,12 +566,23 @@
     }
     .hero-meta strong { color: var(--text-2); }
 
+    #playground {
+      display: grid;
+      align-content: space-between;
+      row-gap: clamp(var(--space-6), 3.2vw, var(--space-8));
+    }
+    #playground .panel-header {
+      margin-bottom: 0;
+    }
     .playground-field {
       display: grid;
       gap: var(--space-3);
     }
     .playground-field + .playground-field {
       margin-top: var(--space-6);
+    }
+    #playground .playground-field + .playground-field {
+      margin-top: 0;
     }
     .name-input {
       max-width: 320px;
