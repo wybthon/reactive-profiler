@@ -78,7 +78,7 @@ def Legend(text: str = "", tone: str = "good"):
     """Inline colored legend dot + caption."""
 
     tone_static = untrack(tone) or "good"
-    dot_class = "legend-dot bad" if tone_static == "bad" else "legend-dot"
+    dot_class = "legend-dot" if tone_static == "good" else f"legend-dot {tone_static}"
     return span(span(class_=dot_class), text, class_="legend")
 
 

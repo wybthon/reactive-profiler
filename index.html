@@ -760,33 +760,33 @@
 
     /* Code surfaces */
     .code-surface {
-      background: #13223f;
-      border: 3px solid var(--border-1);
+      background: #fffdf2;
+      border: 3px solid var(--accent-3);
       border-radius: var(--radius);
       box-shadow: var(--shadow-soft);
       padding: 1.1rem 1.2rem;
       font-family: var(--font-mono);
       font-size: 0.82rem;
       line-height: 1.7;
-      color: #eef5ff;
+      color: var(--text-1);
       overflow-x: auto;
     }
-    .code-surface .tok-kw     { color: #fff07c; }
-    .code-surface .tok-fn     { color: #5ad6ff; }
-    .code-surface .tok-str    { color: #6ef2cf; }
-    .code-surface .tok-num    { color: #ffb86b; }
-    .code-surface .tok-cmt    { color: #9aa6c3; font-style: italic; }
-    .code-surface .tok-op     { color: #eef5ff; }
-    .code-surface .tok-self   { color: #ff8ead; }
+    .code-surface .tok-kw     { color: #087fa8; font-weight: 800; }
+    .code-surface .tok-fn     { color: #24365f; font-weight: 800; }
+    .code-surface .tok-str    { color: #1d745f; }
+    .code-surface .tok-num    { color: #9a5d00; }
+    .code-surface .tok-cmt    { color: var(--text-3); font-style: italic; }
+    .code-surface .tok-op     { color: var(--text-1); }
+    .code-surface .tok-self   { color: var(--error); }
     .code-surface .tok-hole   {
-      background: rgba(90,216,255,0.18);
-      border-bottom: 2px dashed #5ad6ff;
+      background: rgba(22, 174, 227, 0.18);
+      border-bottom: 2px dashed var(--accent);
       border-radius: 2px;
       padding: 0 2px;
     }
     .code-surface .tok-once   {
-      background: rgba(255,240,124,0.20);
-      border-bottom: 2px dashed #fff07c;
+      background: rgba(248, 222, 78, 0.45);
+      border-bottom: 2px dashed #b79300;
       border-radius: 2px;
       padding: 0 2px;
     }
@@ -822,6 +822,8 @@
       box-shadow: 2px 2px 0 currentColor;
     }
     .legend-dot.bad { background: var(--error); }
+    .legend-dot.hole { background: var(--accent); }
+    .legend-dot.once { background: var(--accent-2); }
 
     /* Highlighted hole label */
     .hole-tag {

@@ -56,12 +56,12 @@ def _slf(value: str) -> Any:
 
 
 def _hole(*children: Any) -> Any:
-    """Mark a span of tokens as a reactive hole (purple background)."""
+    """Mark a span of tokens as a reactive hole (blue highlight)."""
     return span(*children, class_="tok-hole")
 
 
 def _once(*children: Any) -> Any:
-    """Mark a span of tokens as run-once (teal background)."""
+    """Mark a span of tokens as run-once (yellow highlight)."""
     return span(*children, class_="tok-once")
 
 
@@ -77,21 +77,14 @@ def CodeInspector():
             h(Eyebrow, {"text": "How this works"}),
             h2("One body. Many holes."),
             p(
-                "This is the same code that powers the playground. Highlighted ",
-                "in ", span("teal", style={"color": "var(--cool)", "fontWeight": "600"}),
-                " is what runs ",
-                _once("exactly once"),
-                " at mount time. Highlighted in ",
-                span("purple", style={"color": "var(--accent-2)", "fontWeight": "600"}),
-                " is each ",
-                _hole("reactive hole"),
-                ": every signal accessor that the reconciler will wire up to its own ",
-                "fine-grained effect.",
+                "This mini Counter uses the same model as the playground. Yellow marks ",
+                "the setup path that runs exactly once at mount; blue marks each reactive ",
+                "hole that the reconciler wires to its own fine-grained effect.",
                 class_="lede",
             ),
             div(
-                h(Legend, {"text": "Run once at mount", "tone": "good"}),
-                h(Legend, {"text": "Reactive hole · own effect", "tone": "good"}),
+                h(Legend, {"text": "Mount-only setup", "tone": "once"}),
+                h(Legend, {"text": "Reactive hole · own effect", "tone": "hole"}),
                 class_="legend-row",
             ),
             pre(
