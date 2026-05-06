@@ -1,0 +1,61 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "wybthon-reactive-profiler"
+version = "0.1.0"
+description = "Interactive demo of Wybthon's run-once components and reactive holes."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { file = "LICENSE" }
+authors = [
+  { name = "Owen Carey" },
+]
+keywords = ["wybthon", "pyodide", "reactive", "frontend", "demo", "spa"]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Environment :: WebAssembly",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+  "Topic :: Internet :: WWW/HTTP :: Dynamic Content",
+]
+
+# The site itself runs entirely in the browser via Pyodide and installs
+# `wybthon` from PyPI through micropip at boot. This local dependency is
+# only here so editor tooling (linters, type checkers, IDE autocomplete)
+# can resolve `wybthon` against the same version that the site loads.
+dependencies = [
+  "wybthon==0.23.0",
+]
+
+[project.optional-dependencies]
+dev = [
+  "black>=24.0",
+  "ruff>=0.5",
+]
+
+[project.urls]
+Homepage = "https://profiler.wybthon.com/"
+Repository = "https://github.com/wybthon/reactive-profiler"
+Wybthon = "https://github.com/wybthon/wybthon"
+PyPI = "https://pypi.org/project/wybthon/"
+Documentation = "https://docs.wybthon.com/"
+
+[tool.setuptools]
+# This project is not packaged for distribution; suppress auto-discovery
+# warnings by declaring an explicit (empty) package list.
+packages = []
+
+[tool.ruff]
+target-version = "py310"
+line-length = 110
+extend-exclude = ["app/manifest.json"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I"]
+
+[tool.black]
+line-length = 110
+target-version = ["py310"]

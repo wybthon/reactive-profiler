@@ -1,0 +1,33 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.venv/
+venv/
+env/
+.python-version
+
+# Editors
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Build artifacts (the manifest is generated, but committed for static deploys)
+# Uncomment the next line if you prefer to regenerate it locally:
+# /app/manifest.json
+
+# Logs / caches
+*.log
+.cache/
+.mypy_cache/
+.pytest_cache/
+.ruff_cache/
+
+# Tooling
+node_modules/

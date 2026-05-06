@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "files": [
+    "__init__.py",
+    "app.py",
+    "main.py",
+    "profiler/__init__.py",
+    "profiler/island.py",
+    "profiler/state.py",
+    "sections/__init__.py",
+    "sections/code_inspector.py",
+    "sections/comparison.py",
+    "sections/footer.py",
+    "sections/header.py",
+    "sections/hero.py",
+    "sections/why.py",
+    "ui/__init__.py",
+    "ui/primitives.py"
+  ]
+}
